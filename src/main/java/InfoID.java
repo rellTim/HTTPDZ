@@ -3,22 +3,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class InfoID {
     private final String id;
     private final String text;
-    private final String cat;
+    private final String type;
     private final String user;
-    private final int upVotes;
+    private final int upvotes;
 
     public InfoID(
             @JsonProperty("id") String id,
             @JsonProperty("text") String text,
-            @JsonProperty("cat") String cat,
+            @JsonProperty("type") String cat,
             @JsonProperty("user") String user,
-            @JsonProperty("upVotes") int upVotes
+            @JsonProperty("upvotes") int upVotes
     ) {
         this.id = id;
         this.text = text;
-        this.cat = cat;
+        this.type = cat;
         this.user = user;
-        this.upVotes = upVotes;
+        this.upvotes = upVotes;
     }
 
     public String getId() {
@@ -30,7 +30,7 @@ public class InfoID {
     }
 
     public String getCat() {
-        return cat;
+        return type;
     }
 
     public String getUser() {
@@ -38,15 +38,15 @@ public class InfoID {
     }
 
     public int getUpVotes() {
-        return upVotes;
+        return upvotes;
     }
 
     @Override
     public String toString() {
-        return  " id - " + id +
-                " text - " + text +
-                " cat - " + cat +
-                " user - " + user +
-                " upVotes - " + upVotes;
+        return  " \nid - " + id
+                 + " \ntext - " + text
+                 + " \ncat - " + type
+                 + " \nuser - " + user
+                 + " \nupVotes - " + upvotes;
     }
 }
