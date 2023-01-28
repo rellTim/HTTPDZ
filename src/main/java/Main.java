@@ -17,11 +17,11 @@ public class Main {
         try (var httpClient = HttpClients.createDefault()
         ) {
             var response = httpClient.execute(httpGet);
-           // var entity = response.getEntity();
-           // System.out.println(EntityUtils.toString(entity));
-            var infoID = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<InfoID>>() {
-            });
-            infoID.stream().filter(value -> value.getUpVotes() > 0).forEach(System.out::println);
+            var entity = response.getEntity();
+            System.out.println(EntityUtils.toString(entity));
+//            var infoID = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<InfoID>>() {
+//            });
+//            infoID.stream().filter(value -> value.getUpVotes() > 0).forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
         }
